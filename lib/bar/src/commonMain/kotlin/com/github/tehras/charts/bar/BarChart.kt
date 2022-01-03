@@ -33,19 +33,17 @@ fun BarChart(
   yAxisDrawer: YAxisDrawer = SimpleYAxisDrawer(),
   labelDrawer: LabelDrawer = SimpleValueDrawer()
 ) {
-  val transitionAnimation = if (animation != null)
-    remember(barChartData.bars) { Animatable(initialValue = 0f) }
-  else {
-    remember(barChartData.bars) { Animatable(initialValue = 1f) }
-  }
 
-  if (animation != null){
-    LaunchedEffect(barChartData.bars) {
-      transitionAnimation.animateTo(1f, animationSpec = animation)
-    }
-  }
+  val progress = if (animation != null){
+    val transitionAnimation = remember(barChartData.bars) { Animatable(initialValue = 0f) }
 
-  val progress = transitionAnimation.value
+      LaunchedEffect(barChartData.bars) {
+        transitionAnimation.animateTo(1f, animationSpec = animation)
+      }
+    transitionAnimation.value
+  } else {
+    1f
+  }
 
   Canvas(modifier = modifier
     .fillMaxSize()

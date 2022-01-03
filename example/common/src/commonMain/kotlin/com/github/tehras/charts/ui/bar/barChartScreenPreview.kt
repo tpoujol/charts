@@ -13,11 +13,10 @@ import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.github.tehras.charts.bar.BarChart
-import com.github.tehras.charts.bar.renderer.label.SimpleValueDrawer.DrawLocation
+import com.github.tehras.charts.bar.renderer.DrawLocation
 import com.github.tehras.charts.theme.Margins
 import com.github.tehras.charts.ui.ChartScreenStatus
 
@@ -138,7 +137,3 @@ private fun BarChartRow(barChartDataModel: BarChartDataModel) {
     )
   }
 }
-
-@Preview
-@Composable
-fun BarChartPreview() = BarChartScreen()

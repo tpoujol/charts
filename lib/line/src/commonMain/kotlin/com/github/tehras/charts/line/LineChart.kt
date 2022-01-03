@@ -46,16 +46,16 @@ fun LineChart(
       "and should be between 0%-25%"
   }
 
-  val transitionAnimation = if (animation != null)
-    remember(lineChartData.points) { Animatable(initialValue = 0f) }
-  else
-    remember(lineChartData.points) { Animatable(initialValue = 1f) }
+  val progression = if (animation != null) {
+    val transitionAnimation = remember(lineChartData.points) { Animatable(initialValue = 0f) }
 
-  if (animation != null) {
     LaunchedEffect(lineChartData.points) {
       transitionAnimation.snapTo(0f)
       transitionAnimation.animateTo(1f, animationSpec = animation)
     }
+    transitionAnimation.value
+  } else {
+    1f
   }
 
   Canvas(modifier = modifier.fillMaxSize()) {
@@ -87,7 +87,7 @@ fun LineChart(
         linePath = calculateLinePath(
           drawableArea = chartDrawableArea,
           lineChartData = lineChartData,
-          transitionProgress = transitionAnimation.value
+          transitionProgress = progression
         )
       )
 
@@ -97,7 +97,7 @@ fun LineChart(
         fillPath = calculateFillPath(
           drawableArea = chartDrawableArea,
           lineChartData = lineChartData,
-          transitionProgress = transitionAnimation.value
+          transitionProgress = progression
         )
       )
 
@@ -105,7 +105,7 @@ fun LineChart(
         withProgress(
           index = index,
           lineChartData = lineChartData,
-          transitionProgress = transitionAnimation.value
+          transitionProgress = progression
         ) {
           pointDrawer.drawPoint(
             drawScope = this,

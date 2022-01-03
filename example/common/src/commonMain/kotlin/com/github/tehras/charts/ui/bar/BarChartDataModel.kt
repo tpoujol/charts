@@ -9,10 +9,11 @@ import androidx.compose.ui.graphics.Color.Companion.White
 import com.github.tehras.charts.bar.BarChartData
 import com.github.tehras.charts.bar.BarChartData.Bar
 import com.github.tehras.charts.bar.renderer.label.SimpleValueDrawer
-import com.github.tehras.charts.bar.renderer.label.SimpleValueDrawer.DrawLocation
-import com.github.tehras.charts.bar.renderer.label.SimpleValueDrawer.DrawLocation.Inside
-import com.github.tehras.charts.bar.renderer.label.SimpleValueDrawer.DrawLocation.Outside
-import com.github.tehras.charts.bar.renderer.label.SimpleValueDrawer.DrawLocation.XAxis
+import com.github.tehras.charts.bar.renderer.DrawLocation
+import com.github.tehras.charts.bar.renderer.DrawLocation.Inside
+import com.github.tehras.charts.bar.renderer.DrawLocation.Outside
+import com.github.tehras.charts.bar.renderer.DrawLocation.XAxis
+import kotlin.random.Random
 
 class BarChartDataModel {
   private var colors = mutableListOf(
@@ -93,10 +94,10 @@ class BarChartDataModel {
     })
   }
 
-  private fun randomValue(): Float = (100 * Math.random() + 25).toFloat()
+  private fun randomValue(): Float = (100 * Random.nextFloat() + 25).toFloat()
 
   private fun randomColor(): Color {
-    val randomIndex = (Math.random() * colors.size).toInt()
+    val randomIndex = (Random.nextFloat() * colors.size).toInt()
     val color = colors[randomIndex]
     colors.removeAt(randomIndex)
 

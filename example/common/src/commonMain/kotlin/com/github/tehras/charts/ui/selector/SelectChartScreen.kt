@@ -12,7 +12,6 @@ import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import com.github.tehras.charts.theme.Margins
 import com.github.tehras.charts.ui.ChartScreen
 import com.github.tehras.charts.ui.ChartScreen.Bar
@@ -53,7 +52,3 @@ private fun ChartRow(
     }
   }
 }
-
-@Preview
-@Composable
-fun SelectChartScreenPreview() = SelectChartScreen()

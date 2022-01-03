@@ -16,6 +16,7 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
+                implementation(Kotlin.stdLib)
                 api(project(":lib:common"))
 
                 api(compose.animation)

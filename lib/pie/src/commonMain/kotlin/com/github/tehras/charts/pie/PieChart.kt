@@ -21,22 +21,23 @@ fun PieChart(
   animation: AnimationSpec<Float>? = simpleChartAnimation(),
   sliceDrawer: SliceDrawer = SimpleSliceDrawer()
 ) {
-  val transitionProgress = if (animation != null)
-    remember(pieChartData.slices) { Animatable(initialValue = 0f) }
-  else
-    remember(pieChartData.slices) { Animatable(initialValue = 1f) }
 
-  // When slices value changes we want to re-animated the chart.
-  if (animation != null) {
-    LaunchedEffect(pieChartData.slices) {
-      transitionProgress.animateTo(1f, animationSpec = animation)
-    }
+  val progression = if (animation != null){
+    val transitionProgress = remember(pieChartData.slices) { Animatable(initialValue = 0f) }
+
+    // When slices value changes we want to re-animated the chart.
+      LaunchedEffect(pieChartData.slices) {
+        transitionProgress.animateTo(1f, animationSpec = animation)
+      }
+    transitionProgress.value
+  } else {
+    1f
   }
 
   DrawChart(
     pieChartData = pieChartData,
     modifier = modifier.fillMaxSize(),
-    progress = transitionProgress.value,
+    progress = progression,
     sliceDrawer = sliceDrawer
   )
 }
