@@ -1,4 +1,4 @@
-package com.github.tehras.charts.piechart.animation
+package com.github.tehras.charts.common.animation
 
 import androidx.compose.animation.core.TweenSpec
 

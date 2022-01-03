@@ -1,5 +1,6 @@
 rootProject.name = "charts"
-include(":app")
+include(":example:common")
+include(":example:android")
 
 /** Libraries deps. */
 include(":lib:bar")

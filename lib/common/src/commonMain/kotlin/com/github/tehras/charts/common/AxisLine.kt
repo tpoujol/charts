@@ -1,4 +1,4 @@
-package com.github.tehras.charts.piechart
+package com.github.tehras.charts.common
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Paint

@@ -1,8 +1,7 @@
 plugins {
-    kotlin("multiplatform")
     id("com.android.library")
+    kotlin("multiplatform")
     id("org.jetbrains.compose") version Versions.compose
-    `maven-publish`
 }
 
 kotlin {
@@ -16,11 +15,16 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
+                implementation(project(":lib:pie"))
+                implementation(project(":lib:bar"))
+                implementation(project(":lib:line"))
 
-                api(compose.animation)
-                api(compose.ui)
-                api(compose.foundation)
-                api(compose.runtime)
+                implementation(compose.runtime)
+                implementation(compose.preview)
+                implementation(compose.foundation)
+                implementation(compose.ui)
+                implementation(compose.animation)
+                implementation(compose.material)
             }
         }
         val commonTest by getting {
@@ -31,6 +35,9 @@ kotlin {
         val androidMain by getting {
             dependencies {
                 api(compose.preview)
+
+                implementation(Android.appcompat)
+                implementation(Android.activityCompose)
             }
         }
         val androidTest by getting {
@@ -47,9 +54,9 @@ kotlin {
     }
 }
 
+
 apply(from = rootProject.file("gradle/configure-android.gradle"))
 apply(from = rootProject.file("gradle/configure-compose.gradle"))
-apply(from = rootProject.file("gradle/jitpack-publish.gradle"))
 
 android {
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")

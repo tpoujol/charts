@@ -3,8 +3,8 @@
 object Versions {
     const val kotlin = "1.5.31"
     const val composeCompilerVersion = kotlin
-    const val compose = "1.0.5"
-    const val targetSdk = 30
+    const val compose = "1.0.0"
+    const val targetSdk = 31
     const val buildVersion = "30.0.3"
 }
 

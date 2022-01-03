@@ -27,7 +27,7 @@ import com.github.tehras.charts.line.renderer.xaxis.SimpleXAxisDrawer
 import com.github.tehras.charts.line.renderer.xaxis.XAxisDrawer
 import com.github.tehras.charts.line.renderer.yaxis.SimpleYAxisDrawer
 import com.github.tehras.charts.line.renderer.yaxis.YAxisDrawer
-import com.github.tehras.charts.piechart.animation.simpleChartAnimation
+import com.github.tehras.charts.common.animation.simpleChartAnimation
 
 @Composable
 fun LineChart(

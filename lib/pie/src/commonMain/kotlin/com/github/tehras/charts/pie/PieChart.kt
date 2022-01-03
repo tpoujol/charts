@@ -1,4 +1,4 @@
-package com.github.tehras.charts.common
+package com.github.tehras.charts.pie
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.AnimationSpec
@@ -9,10 +9,10 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.drawscope.drawIntoCanvas
-import com.github.tehras.charts.common.PieChartUtils.calculateAngle
+import com.github.tehras.charts.pie.PieChartUtils.calculateAngle
 import com.github.tehras.charts.common.animation.simpleChartAnimation
-import com.github.tehras.charts.common.renderer.SimpleSliceDrawer
-import com.github.tehras.charts.common.renderer.SliceDrawer
+import com.github.tehras.charts.pie.renderer.SimpleSliceDrawer
+import com.github.tehras.charts.pie.renderer.SliceDrawer
 
 @Composable
 fun PieChart(

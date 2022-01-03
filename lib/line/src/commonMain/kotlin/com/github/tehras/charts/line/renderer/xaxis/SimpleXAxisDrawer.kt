@@ -12,7 +12,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.github.tehras.charts.piechart.utils.toLegacyInt
+import com.github.tehras.charts.common.utils.toLegacyInt
 
 class SimpleXAxisDrawer(
   private val labelTextSize: TextUnit = 12.sp,

@@ -1,4 +1,4 @@
-package com.github.tehras.charts.common
+package com.github.tehras.charts.pie
 
 internal object PieChartUtils {
   fun calculateAngle(

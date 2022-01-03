@@ -1,9 +1,9 @@
-package com.github.tehras.charts.common.renderer
+package com.github.tehras.charts.pie.renderer
 
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Canvas
 import androidx.compose.ui.graphics.drawscope.DrawScope
-import com.github.tehras.charts.common.PieChartData.Slice
+import com.github.tehras.charts.pie.PieChartData.Slice
 
 interface SliceDrawer {
   fun drawSlice(

@@ -1,22 +1,59 @@
 plugins {
+  kotlin("multiplatform")
   id("com.android.library")
-  kotlin("android")
+  id("org.jetbrains.compose") version Versions.compose
   `maven-publish`
+}
+
+kotlin {
+  android()
+  jvm("desktop") {
+    compilations.all {
+      kotlinOptions.jvmTarget = "11"
+    }
+  }
+
+  sourceSets {
+    val commonMain by getting {
+      dependencies {
+
+        api(Kotlin.stdLib)
+        api(project(":lib:common"))
+
+        api(compose.animation)
+        api(compose.ui)
+        api(compose.foundation)
+        api(compose.runtime)
+      }
+    }
+    val commonTest by getting {
+      dependencies {
+        implementation(kotlin("test"))
+      }
+    }
+    val androidMain by getting {
+      dependencies {
+        api(compose.preview)
+      }
+    }
+    val androidTest by getting {
+      dependencies {
+        implementation("junit:junit:4.13.2")
+      }
+    }
+    val desktopMain by getting {
+      dependencies {
+        api(compose.preview)
+      }
+    }
+    val desktopTest by getting
+  }
 }
 
 apply(from = rootProject.file("gradle/configure-android.gradle"))
 apply(from = rootProject.file("gradle/configure-compose.gradle"))
 apply(from = rootProject.file("gradle/jitpack-publish.gradle"))
 
-dependencies {
-  api(project(":lib:common"))
-
-  implementation(Kotlin.stdLib)
-
-  implementation(Compose.animation)
-  implementation(Compose.core)
-  implementation(Compose.layout)
-  implementation(Compose.foundation)
-  implementation(Compose.runtime)
-  debugImplementation(Compose.tooling)
+android {
+  sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
 }

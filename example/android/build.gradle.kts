@@ -4,24 +4,16 @@ plugins {
     id("org.jetbrains.compose") version Versions.compose
 }
 
-apply(from = rootProject.file("gradle/configure-android.gradle"))
-apply(from = rootProject.file("gradle/configure-compose.gradle"))
+repositories {
+    google()
+}
 
 dependencies {
+    implementation(project(":example:common"))
 
-    implementation(Android.appcompat)
-    implementation(Android.activityCompose)
-
-
-    implementation(project(":lib:pie"))
-    implementation(project(":lib:bar"))
-    implementation(project(":lib:line"))
-
-    implementation(compose.runtime)
-    implementation(compose.preview)
-    implementation(compose.foundation)
-    implementation(compose.ui)
-    implementation(compose.animation)
-    implementation(compose.material)
-
+    implementation("androidx.activity:activity-compose:1.4.0")
+    implementation("androidx.appcompat:appcompat:1.4.0")
 }
+
+apply(from = rootProject.file("gradle/configure-android.gradle"))
+apply(from = rootProject.file("gradle/configure-compose.gradle"))

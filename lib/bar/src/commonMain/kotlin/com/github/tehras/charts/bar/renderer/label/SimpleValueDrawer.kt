@@ -10,7 +10,7 @@ import androidx.compose.ui.unit.sp
 import com.github.tehras.charts.bar.renderer.label.SimpleValueDrawer.DrawLocation.Inside
 import com.github.tehras.charts.bar.renderer.label.SimpleValueDrawer.DrawLocation.Outside
 import com.github.tehras.charts.bar.renderer.label.SimpleValueDrawer.DrawLocation.XAxis
-import com.github.tehras.charts.piechart.utils.toLegacyInt
+import com.github.tehras.charts.common.utils.toLegacyInt
 
 class SimpleValueDrawer(
   private val drawLocation: DrawLocation = Inside,

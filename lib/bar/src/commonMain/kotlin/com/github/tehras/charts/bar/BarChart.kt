@@ -21,7 +21,7 @@ import com.github.tehras.charts.bar.renderer.xaxis.SimpleXAxisDrawer
 import com.github.tehras.charts.bar.renderer.xaxis.XAxisDrawer
 import com.github.tehras.charts.bar.renderer.yaxis.SimpleYAxisDrawer
 import com.github.tehras.charts.bar.renderer.yaxis.YAxisDrawer
-import com.github.tehras.charts.piechart.animation.simpleChartAnimation
+import com.github.tehras.charts.common.animation.simpleChartAnimation
 
 @Composable
 fun BarChart(
