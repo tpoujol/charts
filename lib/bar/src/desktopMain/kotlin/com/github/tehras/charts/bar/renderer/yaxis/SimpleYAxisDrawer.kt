@@ -17,7 +17,7 @@ actual class SimpleYAxisDrawer actual constructor(
     actual val axisLineColor: Color
 ) : YAxisDrawer {
     override fun drawAxisLine(drawScope: DrawScope, canvas: Canvas, drawableArea: Rect) {
-        TODO("Not yet implemented")
+
     }
 
     override fun drawAxisLabels(
@@ -27,7 +27,7 @@ actual class SimpleYAxisDrawer actual constructor(
         minValue: Float,
         maxValue: Float
     ) {
-        TODO("Not yet implemented")
+        
     }
 
 }

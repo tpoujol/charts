@@ -44,6 +44,7 @@ kotlin {
     val desktopMain by getting {
       dependencies {
         api(compose.preview)
+        api(compose.desktop.currentOs)
       }
     }
     val desktopTest by getting
