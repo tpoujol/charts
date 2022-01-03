@@ -6,7 +6,6 @@ import androidx.compose.ui.graphics.*
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
-import com.github.tehras.charts.common.utils.toLegacyInt
 
 actual class SimpleXAxisDrawer actual constructor(
     actual val labelTextSize: TextUnit,
@@ -23,9 +22,9 @@ actual class SimpleXAxisDrawer actual constructor(
         style = PaintingStyle.Stroke
     }
 
-    private val textPaint = android.graphics.Paint().apply {
+    private val textPaint = Paint().apply {
         isAntiAlias = true
-        color = labelTextColor.toLegacyInt()
+        color = labelTextColor
     }
 
     override fun requiredHeight(drawScope: DrawScope): Float {
@@ -66,7 +65,7 @@ actual class SimpleXAxisDrawer actual constructor(
         labels: List<String>
     ) {
         with(drawScope) {
-            val labelPaint = textPaint.apply {
+            val labelPaint = textPaint.asFrameworkPaint().apply {
                 textSize = labelTextSize.toPx()
                 textAlign = android.graphics.Paint.Align.CENTER
             }
