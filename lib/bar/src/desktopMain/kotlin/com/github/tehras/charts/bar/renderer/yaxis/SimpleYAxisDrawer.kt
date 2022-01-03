@@ -83,8 +83,8 @@ actual class SimpleYAxisDrawer actual constructor(
 
             // For each label, we offset the current value in accordance with the width of the
             // smallest value
-            val x = drawableArea.right - axisLineThickness.toPx()
-            - txLine.width - smallestValueWidth * 0.2f
+            val x = drawableArea.right - axisLineThickness.toPx() - txLine.width -
+                    smallestValueWidth * 0.2f
 
 
             val y =
