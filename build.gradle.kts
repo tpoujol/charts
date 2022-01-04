@@ -23,7 +23,7 @@ subprojects {
       // Allow warnings when running from IDE, makes it easier to experiment.
       allWarningsAsErrors = true
 
-      jvmTarget = "1.8"
+      jvmTarget = "11"
     }
   }
 }
