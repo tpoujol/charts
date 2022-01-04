@@ -9,8 +9,8 @@ repositories {
 }
 
 dependencies {
-    implementation(project(":example:common"))
 
+    implementation(project(":example:base"))
     implementation("androidx.activity:activity-compose:1.4.0")
     implementation("androidx.appcompat:appcompat:1.4.0")
 }

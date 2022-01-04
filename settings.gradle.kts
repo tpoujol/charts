@@ -1,5 +1,5 @@
 rootProject.name = "charts"
-include(":example:common")
+include(":example:base")
 include(":example:android")
 include(":example:desktop")
 
